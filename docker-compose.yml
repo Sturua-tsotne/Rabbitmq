@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  rabbitsender:
+    image: ${DOCKER_REGISTRY-}rabbitsender
+    build:
+      context: .
+      dockerfile: RabbitSender/Dockerfile
+
+  rabbitreceiver1:
+    image: ${DOCKER_REGISTRY-}rabbitreceiver1
+    build:
+      context: .
+      dockerfile: RabbitRecever1/Dockerfile
+
+
+  rabbitreceiver2:
+    image: ${DOCKER_REGISTRY-}rabbitreceiver2
+    build:
+      context: .
+      dockerfile: RabbitReceiver2/Dockerfile
+
